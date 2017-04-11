@@ -204,14 +204,17 @@ void NewGame(vector<Card>&deck, vector<Card>&player_hand, vector<Card>&cpu_hand,
 
 	createDeck(deck);
 
+	Shuffle(deck);
+
+	DealHand(deck, player_hand);
+	DealHand(deck, cpu_hand);
+
 	do
 	{
 		Shuffle(deck);
 
 	} while (FirstCard(deck)); //so top card won't be special
 
-	DealHand(deck, player_hand);
-	DealHand(deck, cpu_hand);
 
 	
 	discard_pile.push_back(deck.back());
